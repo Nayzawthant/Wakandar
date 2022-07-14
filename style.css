@@ -11,6 +11,13 @@ body {
     
 }
 
+.menu-btn {
+    padding: 10px;
+    background: #1c00b5;
+    display: none;
+    cursor: pointer;
+}
+
 .mainContainer {
     width: 80%;
     margin: 0 auto;
@@ -23,27 +30,52 @@ body {
     align-items: center;
 }
 
-.last {
+.menulast {
     width: 50%;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-.last a {
+.menulast a {
     text-decoration: none;
     font-weight: 500;
-    font-size: 16px;
-    line-height: 19.09px;
+    font-size: 18px;
     color: #000000;
+    position: relative;
+    padding: 10px;
+    border-radius: 8px;
 }
 
-.last a:hover {
-    padding: 10px 18px;
+.menulast a::before {
+    content: '';
+    width: 100%;
+    height: 0px;
     background: #0077C0;
-    border-radius: 10px;
-    color: #FFFFFF;
+    position: absolute;
+    z-index: -2;
+    left: 0;
+    top: -0px;
+    overflow: hidden;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    transition: height 0.5s;
+}
+
+.menulast a:hover::before {
+    height: 46px;
     font-size: 18px;
-    font-weight: 600;
+    background: #0077C0;
+}
+
+
+
+.menulast a:hover {
+    padding: 10px 3px;
+    color: #FFFFFF;
+    box-shadow: 0px 10px 10px rgba(49, 49, 49, 0.1), 0px 64.8148px 46.8519px rgba(49, 49, 49, 0.0759259), 0px 38.5185px 25.4815px rgba(49, 49, 49, 0.0607407), 0px 20px 13px rgba(49, 49, 49, 0.05), 0px 8.14815px 6.51852px rgba(49, 49, 49, 0.0392593), 0px 1.85185px 3.14815px rgba(49, 49, 49, 0.0240741);
 }
 
 .navContainer {
@@ -116,7 +148,6 @@ body {
 }
 
 .innerHeader {
-    width: 40%;
     text-align: center;
 }
 
@@ -287,10 +318,6 @@ body {
     padding: 50px 0;
 }
 
-.sixHeaderInner {
-    width: 40%;
-}
-
 .sixHeaderInner h4 {
     font-weight: 600;
     font-size: 16px;
@@ -317,25 +344,23 @@ body {
 }
 
 .sixInner .sixInner1 {
-    width: 330px;
+    width: 28%;
     height: 182px;
     background: #FFFFFF;
     margin-bottom: 30px;
     padding: 20px;
-    margin-right: 30px;
 }
 
 .sixInner .sixInner2 {
-    width: 330px;
+    width: 28%;
     height: 140px;
     background: #FFFFFF;
     margin-bottom: 30px;
     padding: 20px;
-    margin-right: 30px;
 }
 
 .sixInner .sixInner3 {
-    width: 340px;
+    width: 28%;
     height: 185px;
     background: #FFFFFF;
     margin-bottom: 30px;
@@ -343,28 +368,26 @@ body {
 }
 
 .sixInner .sixInner4 {
-    width: 330px;
+    width: 28%;
     height: 172px;
     background: #FFFFFF;
     margin-bottom: 30px;
     padding: 20px;
-    margin-right: 30px;
 }
 
 .sixInner .sixInner5 {
-    width: 330px;
+    width: 28%;
     height: 223px;
     background: #FFFFFF;
     margin-bottom: 30px;
     padding: 20px;
-    margin-right: 30px;
     position: absolute;
     left: 418px;
     bottom: 0;
 }
 
 .sixInner .sixInner6 {
-    width: 340px;
+    width: 28%;
     height: 172px;
     background: #FFFFFF;
     padding: 20px;
@@ -546,4 +569,264 @@ body {
 
 input::placeholder {
     color:#fff;
+}
+
+@media (max-width:780px) {
+    .menulast {
+        position: absolute;
+        top: 0px;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        background: #d0d0e7;
+        margin-left: -900px;
+        transition: all 0.5s;
+    }
+
+    .menulast a {
+        margin: 30px auto;
+    }
+
+    .mobile-menu{
+        margin-left: 0px;
+    }
+
+    .menu-btn {
+        display: block;
+        position: absolute;
+        right: 0;
+        border-radius: 8px;
+    }
+
+    .mainContainer {
+        width: 100%;
+    }
+
+    .menuContainer .fast {
+        z-index: 2;
+    }
+
+    .navContainer {
+        background: none;
+        height: 100%;
+    }
+
+    .navContainer .navFirst {
+        width: 100%;
+        text-align: center;
+    }
+
+    .navContainer .navFirst h1 {
+        font-size: 40px;
+    }
+
+    .navContainer .navFirst p br {
+        display: none;
+    }
+
+    .secondContainer  {
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+    }
+
+    .secondContainer img {
+        width: 60%;
+        margin-bottom: 50px;
+    }
+
+    .thirdHeader .innerHeader {
+        width: 100%;
+        
+    }
+
+    .thirdHeader .innerHeader h1  {
+        
+        font-size: 39px;
+    }
+
+    .mainThird {
+        width: 100%;
+    }
+
+    .thirdInner {
+        display: block;
+    }
+
+    .thirdInner .inner {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .mainFour {
+        display: block;
+        width: 100%;
+    }
+
+    .mainFour .fourFirst {
+        width: 100%;
+    }
+
+    .mainFour .fourFirst img {
+        width: 100%;
+    }
+
+    .mainFour .fourSecond {
+        width: 100%;
+        margin-top: 40px;
+    }
+
+    .mainFour .fourSecond .fourInner h4 {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 35px;
+    }
+
+    .mainFour .fourSecond .fourInner .inner1 {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .mainFive {
+        width: 100%;
+    }
+
+    .mainFive .fiveSecond {
+        display: none;
+    }
+
+    .mainFive .fiveFirst {
+        width: 100%;
+        text-align: center;
+    }
+
+    .mainFive .fiveFirst h1 {
+        font-size: 34px;
+    }
+
+    .sixHeaderInner h1 {
+        font-size: 34px;
+    }
+
+    .sixHeaderInner h1 br {
+        display: none;
+    }
+
+    .sixInner {
+        width: 100%;
+    }
+
+    .sixInner .sixInner1 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .sixInner .sixInner2 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .sixInner .sixInner3 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .sixInner .sixInner4 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .sixInner .sixInner5 {
+        position: relative;
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .sixInner .sixInner6 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-six {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    .sixInner .sixInner1 p br {
+        display: none;
+    }
+
+    .sixInner .sixInner2 p br {
+        display: none;
+    }
+
+    .sixInner .sixInner3 p br {
+        display: none;
+    }
+
+    .sixInner .sixInner4 p br {
+        display: none;
+    }
+
+    .sixInner .sixInner5 p br {
+        display: none;
+    }
+
+    .sixInner .sixInner6 p br {
+        display: none;
+    }
+
+    .mainSeven {
+        width: 100%;
+    }
+
+    .mainSeven .firstSeven {
+        display: none;
+    }
+
+    .mainSeven .lastSeven {
+        width: 100%;
+        text-align: center;
+    }
+
+    .lastSeven .lastInner  h1 {
+        font-size: 35px;
+    }
+
+    .lastSeven {
+        padding: 30px 0;
+    }
+
+    .mainEight {
+        width: 100%;
+        display: block;
+    }
+
+    .mainEight .eightFirst {
+        width: 100%;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+
+    .mainEight .eightSecond {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .mainEight .eightSecond .eightSecondInner {
+        text-align: center;
+    }
+
+    .mainEight .eightThird {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+
 }
